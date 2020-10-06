@@ -1,0 +1,26 @@
+{
+  "tarefas": [
+    {
+      "descricao": "Aprender react",
+      "id": 1,
+      "concluido": true
+    },
+    {
+      "descricao": "Teste",
+      "concluido": false,
+      "id": 2
+    },
+    {
+      "descricao": "Novo",
+      "concluido": false,
+      "id": 3
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "da@da",
+      "password": "1"
+    }
+  ]
+}
