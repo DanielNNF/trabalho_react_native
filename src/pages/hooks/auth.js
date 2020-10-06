@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 
-//import api from '../services/api';
+import api from '../../services/api';
 
 const AuthContext = createContext({});
 
@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     async function loadData() {
       const user = await AsyncStorage.getItem('@GDP:user');
-      // console.log("AuthProvider user", user);
+       console.log("AuthProvider user", user);
 
       if(user){
         setData({ user: JSON.parse(user) })

@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 //import {ActivityIndicator} from 'react-native';
-//import { useAuth } from '../hooks/auth';
+import { useAuth } from '../hooks/auth';
 import logoImg from '../../assets/logo.png';
+
 
 import { Container, Input, Button, ButtonText, Logo } from './styles';
 
 const Login = () => {
-  // const { signIn } = useAuth();
+   const { signIn } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +19,7 @@ const Login = () => {
         if(!password) return;
         
       try {
-        await signIn({email, password});
+        await signIn({email:email, password:password});
         console.log("handleSubmit success");
 
       } catch (error) {
