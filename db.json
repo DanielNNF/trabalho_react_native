@@ -1,26 +1,35 @@
 {
-  "tarefas": [
+  "usuarios": [
     {
-      "descricao": "Aprender react",
       "id": 1,
-      "concluido": true
-    },
+      "email": "diego@domob.me",
+      "password": "123123"
+    }
+  ],
+  "projetos": [
     {
       "descricao": "Teste",
       "concluido": false,
       "id": 2
     },
     {
-      "descricao": "Novo",
+      "descricao": "Novo Projeto teste",
       "concluido": false,
       "id": 3
     }
   ],
-  "usuarios": [
+  "tarefas": [
     {
-      "id": 1,
-      "email": "da@da",
-      "password": "1"
+      "descricao": "Nova Tarefa",
+      "concluido": false,
+      "projetoId": 2,
+      "id": 4
+    },
+    {
+      "descricao": "Botar essa bosta pra funcionar",
+      "concluido": true,
+      "projetoId": 3,
+      "id": 5
     }
   ]
 }

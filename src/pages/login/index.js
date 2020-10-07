@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-//import {ActivityIndicator} from 'react-native';
+
 import { useAuth } from '../hooks/auth';
 import logoImg from '../../assets/logo.png';
 
