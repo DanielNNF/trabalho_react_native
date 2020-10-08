@@ -129,10 +129,10 @@ const Tarefas = ({route}) => {
           <Task key={task.id}>
             <TaskText>{task.descricao}</TaskText>
 
-            <BtnDetalhes onPress={() => navigation.navigate("Tarefas")}>
+            {/* <BtnDetalhes onPress={() => navigation.navigate("Tarefas")}>
               <BtnText>Detalhes</BtnText>
             </BtnDetalhes>
-          
+           */}
 
             <TaskAction>
               { task.concluido ? (

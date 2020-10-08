@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import api from '../../services/api';
+ import  { useAuth } from '../hooks/auth'
 
 
 import { 
@@ -21,7 +22,7 @@ import {
 
 
 const Projetos = ({navigation}) => {
- // const { signOut } = useAuth();
+  const { signOut } = useAuth();
   const [projeto, setProjetos] = useState([]);
   const [newProjeto, setNewProjeto] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -86,8 +87,14 @@ const Projetos = ({navigation}) => {
   );
 
   return (
-    <Container>
+     <Container>
+      
       <Title>Projetos</Title>
+      
+      <Button onPress={signOut}>
+             <ButtonText>Sair</ButtonText>
+        </Button>
+       
 
       <FormAddNewTask>
         <Input 
@@ -96,17 +103,16 @@ const Projetos = ({navigation}) => {
           placeholder="Novo projeto"
         />
 
+        <>
         <Button onPress={() => handleAddProjeto()}>
           <ButtonText>
               Criar
           </ButtonText>
         </Button>
         
-        {/* <LogoutButton onPress={() => signOut()}>
-            <LogoutButtonText>
-              Sair
-            </LogoutButtonText>
-        </LogoutButton> */}
+        </>
+        
+        
 
       </FormAddNewTask>
 
