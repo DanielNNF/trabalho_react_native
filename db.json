@@ -4,6 +4,11 @@
       "id": 1,
       "email": "diego@domob.me",
       "password": "123123"
+    },
+    {
+      "id": 2,
+      "email": "clau@din",
+      "password": "123123"
     }
   ],
   "projetos": [
