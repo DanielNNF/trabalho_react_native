@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import api from '../../services/api';
-import RNPickerSelect from 'react-native-picker-select';
+import  { useAuth } from '../hooks/auth'
 
 
 import { 
@@ -21,12 +21,11 @@ import {
 } from './styles';
 
 
-const Tarefas = ({route}) => {
-  const {usuarios, setUsuarios} = useState([]); 
-  const {projetoId} = route.params;
+const TarefasUsuarios = () => {
+    const { user } = useAuth();
+  
   const [tasks, setTasks] = useState([]);
   const [tasksFiltered, setTasksFiltered] = useState([]);
-  const [newTask, setNewTask] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const loadTasks = useCallback(
@@ -37,17 +36,9 @@ const Tarefas = ({route}) => {
   );
 
   useEffect(() => {
-    loadUsuarios();
-    loadTasks();
-  }, [loadTasks, loadUsuarios]);
-
-  const loadUsuarios = useCallback (
-    async ()  => {
-      const response = await api.get(`usuarios`);
-      const users = response.data.map(user => ({label:user.email, value:user.id}))
-      setUsuarios(users)
     
-    });
+    loadTasks();
+  }, [loadTasks]);
 
   const filtrarTarefas = () => {
     const temp = [];
@@ -123,12 +114,6 @@ const Tarefas = ({route}) => {
           placeholder="Novo projeto"
         />
 
-        <RNPickerSelect
-            onValueChange={(value) => console.log(value)}
-            placeholder= {{label: "Funcionário"}}
-            items={usuarios}
-        />
-
         <Button onPress={() => handleAddTask()}>
           <ButtonText>
               Criar
@@ -184,4 +169,4 @@ const Tarefas = ({route}) => {
   )
 }
 
-export default Tarefas;
+export default TarefasUsuarios;
