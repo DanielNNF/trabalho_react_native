@@ -5,7 +5,7 @@ export const Container = styled.View`
   flex: 1;
   padding: 20px;
   justify-content: center;
-  background-color: #2C2C2C;
+  background-color: #103379;
 `;
 
 export const Title = styled.Text`
@@ -24,7 +24,7 @@ export const Input = styled.TextInput`
 export const Button = styled.TouchableOpacity`
   width: 100px;
   height: 40px;
-  background-color: rgb(108,226,0);
+  background-color: #b3c3c3;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
@@ -40,7 +40,7 @@ export const ButtonText = styled.Text`
 export const BtnDetalhes = styled.TouchableOpacity`
   width: 65px;
   height: 30px;
-  background-color: rgb(108,226,0);
+  background-color: #1a5ce1;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
@@ -91,7 +91,7 @@ export const TaskAction = styled.View`
 `;
 
 export const ErroMessage = styled.Text`
-  color: #c53030;
+  color: #ffff00;
   font-size: 14px;
   margin-top: 5px;
 `;

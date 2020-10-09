@@ -62,7 +62,7 @@ const TarefasUsuarios = () => {
 
   return (
     <Container>
-      <Title>Tarefas do {user.usuario}</Title>
+      <Title>Tarefas {user.usuario}</Title>
 
 
       <Tasks>

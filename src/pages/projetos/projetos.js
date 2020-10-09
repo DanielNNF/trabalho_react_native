@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import api from '../../services/api';
- import  { useAuth } from '../hooks/auth'
+import  { useAuth } from '../hooks/auth'
 
 
 import { 
@@ -9,6 +9,7 @@ import {
   Title,
   Input,
   Button,
+  ButtonSair,
   BtnDetalhes,
   BtnText,
   ButtonText,
@@ -88,21 +89,16 @@ const Projetos = ({navigation}) => {
 
   return (
      <Container>
-      
-      <Title>Projetos</Title>
-      
-      <Button onPress={signOut}>
-             <ButtonText>Sair</ButtonText>
-        </Button>
-       
+          
 
       <FormAddNewTask>
         <Input 
           value={newProjeto}
           onChangeText={text => setNewProjeto(text)}
           placeholder="Novo projeto"
-        />
+          style={{fontSize: newProjeto ? 16 : 20}}
 
+        />
         <>
         <Button onPress={() => handleAddProjeto()}>
           <ButtonText>
@@ -160,6 +156,10 @@ const Projetos = ({navigation}) => {
         ))
         }
       </Tasks>
+
+        <ButtonSair onPress={signOut}>
+             <ButtonText>Sair</ButtonText>
+        </ButtonSair>
     </Container>
   )
 }

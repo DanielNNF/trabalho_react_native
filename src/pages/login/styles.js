@@ -4,7 +4,7 @@ export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #2C2C2C;
+  background-color: #103379;
 `;
 
 export const Input = styled.TextInput`
@@ -20,7 +20,7 @@ export const Button = styled.TouchableOpacity`
   width: 290px;
   height: 40px;
   margin-top: 15px;
-  background-color: rgb(108,226,0);
+  background-color: #b3c3c3;
   border-radius: 5px;
   align-items: center;
   justify-content: center;

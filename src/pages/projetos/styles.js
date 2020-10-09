@@ -5,46 +5,54 @@ export const Container = styled.View`
   flex: 1;
   padding: 20px;
   justify-content: center;
-  background-color: #2C2C2C;
-`;
-
-export const Title = styled.Text`
-  font-size: 36px;
-  color: #fff;
+  background-color: #103379;
 `;
 
 export const Input = styled.TextInput`
   flex: 1;
   height: 40px;
   background-color: #fff;
-  padding: 0 20px;
+  padding: 0 10px;
   border-radius: 5px;
 `;
 
 export const Button = styled.TouchableOpacity`
   width: 100px;
   height: 40px;
-  background-color: rgb(108,226,0);
+  background-color: #bcdeff;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
+  margin-left: 5px;
+`;
+
+export const ButtonSair = styled.TouchableOpacity`
+  width: 100px;
+  height: 40px;
+  background-color: #bcdeff;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: 5px;
+
 `;
 
 export const ButtonText = styled.Text`
-  color: #fff;
+  color: #1b1b1b;
   font-size: 18px;
   font-weight: bold;
+  font-family: arial;
 `;
 
 export const BtnDetalhes = styled.TouchableOpacity`
-  width: 65px;
+  width: 70px;
   height: 30px;
-  background-color: rgb(108,226,0);
+  background-color: #103379;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
+  margin-left: 0px;
   flex-direction: row-reverse;
   margin-top: 5px;
 `;
@@ -59,26 +67,27 @@ export const BtnText = styled.Text`
 
 export const FormAddNewTask = styled.View`
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 10px;
 `;
 
 export const Tasks = styled.View`
   flex: 1;
-  margin-top: 40px;
+  margin-top: 10px;
 `;
 
 export const Task = styled.View`
   background-color: #fff;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   justify-content: space-between;
   flex-direction: column;
 `;
 
 export const TaskText = styled.Text`
-  font-size: 16px;
-  color: #3a3a3a;
+  font-size: 18px;
+  font-family: arial;
+  color: #1b1b1b;
   text-align: justify;
   
 `;
@@ -91,7 +100,7 @@ export const TaskAction = styled.View`
 `;
 
 export const ErroMessage = styled.Text`
-  color: #c53030;
+  color: #ffff00;
   font-size: 14px;
   margin-top: 5px;
 `;
