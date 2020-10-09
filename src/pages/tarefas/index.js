@@ -124,6 +124,12 @@ const Tarefas = ({ route }) => {
       <RNPickerSelect
         onValueChange={(value) => console.log(value)}
         items={usuarios}
+        style={{
+          inputAndroid: {
+            color: 'white'
+          }
+        }
+        }
       />
       <FormAddNewTask>
         <Input

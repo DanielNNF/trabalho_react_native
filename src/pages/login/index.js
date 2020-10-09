@@ -4,9 +4,10 @@ import { useAuth } from '../hooks/auth';
 import logoImg from '../../assets/logo.png';
 
 
-import { Container, Input, Button, ButtonText, Logo } from './styles';
+import { Container, Input, Button, ButtonText, Logo, TextSub } from './styles';
 
-const Login = () => {
+
+const Login = ({navigation}) => {
    const { signIn } = useAuth();
 
   const [email, setEmail] = useState("");
@@ -39,19 +40,28 @@ const Login = () => {
         placeholder="E-mail"
       />
 
+
       <Input 
         value={password}
         onChangeText={text => setPassword(text)}
         placeholder="Senha"
         secureTextEntry={true}
       />
-
+      {/* <Input 
+        value = {email}
+        onChangeText={text => setEmail(text)}
+        placeholder="Usuário"
+      /> */}
+      
       <Button onPress={() => handleSubmit()}>
-    
           <ButtonText>Acessar</ButtonText>
-       
       </Button>
 
+      <TextSub onPress={()=> navigation.navigate("Cadastro")}>Não tem cadastro?  Clique aqui</TextSub>
+
+      
+      
+      
     </Container>
   )
 }
