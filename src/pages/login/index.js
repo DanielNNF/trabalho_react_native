@@ -47,11 +47,7 @@ const Login = ({navigation}) => {
         placeholder="Senha"
         secureTextEntry={true}
       />
-      {/* <Input 
-        value = {email}
-        onChangeText={text => setEmail(text)}
-        placeholder="Usuário"
-      /> */}
+
       
       <Button onPress={() => handleSubmit()}>
           <ButtonText>Acessar</ButtonText>

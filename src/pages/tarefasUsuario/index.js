@@ -25,13 +25,11 @@ const TarefasUsuarios = () => {
     const { user } = useAuth();
   
   const [tasks, setTasks] = useState([]);
-  const [tasksFiltered, setTasksFiltered] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
 
   const loadTasks = useCallback(
     async () => {
-      const response = await api.get(`tarefas`);
-      setTasks(response.data);
+      const response = await api.get(`/usuarios/${user.id}/?_embed=tarefas`);
+      setTasks(response.data.tarefas);
     },[],
   );
 
@@ -39,48 +37,7 @@ const TarefasUsuarios = () => {
     
     loadTasks();
   }, [loadTasks]);
-
-  const filtrarTarefas = () => {
-    const temp = [];
-    tasks.map(task=>{
-      if(task.projetoId === projetoId){
-        temp.push(task)
-      }
-    })
-    setTasksFiltered(temp);
-  };
-  useEffect(() => {
-    if(!projetoId) {return}
-    filtrarTarefas();
-  },[projetoId, tasks]);
-
-  const handleAddTask = useCallback(
-    async () => {
-      if(newTask === "") {
-        setErrorMessage("Digite o Projeto a ser adicionado");
-        return;
-      }
-
-      setErrorMessage("");
-
-      const params = {
-        descricao: newTask,
-        concluido: false, 
-        projetoId
-      };
-
-      try {
-        await api.post(`tarefas`, params);  
-        
-        loadTasks();
-        setNewTask("");
-      } catch (error) {
-        console.log("error handleAddTask:", error);
-
-        setErrorMessage("Ocorreu um erro ao adicionar tarefa");
-      }
-    },[loadTasks, newTask],
-  );
+ 
 
   const handleTask = useCallback(
     async (task) => {
@@ -105,28 +62,11 @@ const TarefasUsuarios = () => {
 
   return (
     <Container>
-      <Title>Tarefas projeto {projetoId}</Title>
+      <Title>Tarefas do {user.usuario}</Title>
 
-      <FormAddNewTask>
-        <Input 
-          value={newTask}
-          onChangeText={text => setNewTask(text)}
-          placeholder="Novo projeto"
-        />
-
-        <Button onPress={() => handleAddTask()}>
-          <ButtonText>
-              Criar
-          </ButtonText>
-        </Button>
-      </FormAddNewTask>
-
-      { !!errorMessage && (
-        <ErroMessage>{errorMessage}</ErroMessage>
-      )}
 
       <Tasks>
-        { tasksFiltered.map(task => (
+        { tasks.map(task => (
           <Task key={task.id}>
             <TaskText>{task.descricao}</TaskText>
 

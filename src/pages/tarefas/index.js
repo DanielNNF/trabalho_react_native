@@ -23,6 +23,7 @@ import {
 
 const Tarefas = ({ route }) => {
   const [usuarios, setUsuarios] = useState([{ label: '', value: 0 }]);
+  const [usuarioId, setUsuarioId] = useState(0);
   const { projetoId } = route.params;
   const [tasks, setTasks] = useState([]);
   const [tasksFiltered, setTasksFiltered] = useState([]);
@@ -44,8 +45,8 @@ const Tarefas = ({ route }) => {
 
   const loadUsuarios = useCallback(
     async () => {
-      const response = await api.get(`usuarios`);
-      const users = response.data.map(user => ({ label: user.email, value: user.id }))
+      const response = await api.get('usuarios');
+      const users = response.data.map(user => ({ label: user.usuario, value: user.id }))
       setUsuarios(users)
 
     }, []);
@@ -69,6 +70,10 @@ const Tarefas = ({ route }) => {
 
   const handleAddTask = useCallback(
     async () => {
+      if (!usuarioId) {
+        setErrorMessage("Insira o usuário")
+        return
+      }
       if (newTask === "") {
         setErrorMessage("Digite o Projeto a ser adicionado");
         return;
@@ -79,6 +84,7 @@ const Tarefas = ({ route }) => {
       const params = {
         descricao: newTask,
         concluido: false,
+        usuarioId: usuarioId,
         projetoId
       };
 
@@ -99,7 +105,6 @@ const Tarefas = ({ route }) => {
     async (task) => {
       const params = {
         ...task,
-        //ID DO FUNC
         concluido: !task.concluido
       }
 
@@ -128,7 +133,7 @@ const Tarefas = ({ route }) => {
           }
         }
         }
-        onValueChange={(value) => console.log(value)}
+        onValueChange={(value) => setUsuarioId(value)}
         items={usuarios}
         style={{
           inputAndroid: {
@@ -160,11 +165,6 @@ const Tarefas = ({ route }) => {
         {tasksFiltered.map(task => (
           <Task key={task.id}>
             <TaskText>{task.descricao}</TaskText>
-
-            {/* <BtnDetalhes onPress={() => navigation.navigate("Tarefas")}>
-              <BtnText>Detalhes</BtnText>
-            </BtnDetalhes>
-           */}
 
             <TaskAction>
               {task.concluido ? (
