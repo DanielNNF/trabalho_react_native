@@ -1,11 +1,11 @@
 import React,{useState} from 'react';
 import logoImg from '../../assets/logo.png';
 import Api from '../../services/api';
+import {Text} from 'react-native';
 
 
 
-
- import { Container, Input, Logo, Button, ButtonText } from './style';
+import { Container, Input, Logo, Button, ButtonText } from './style';
 
 
   
@@ -56,8 +56,9 @@ const cadastro = ({navigation}) => {
       <Button onPress={() => handleSubmit()}>
           <ButtonText>Cadastrar</ButtonText>
       </Button>
-      <ButtonText onPress={()=> navigation.navigate("Login")}>Cadastrado? Voltei para Login</ButtonText>
-           
+      <Button onPress={()=> navigation.navigate("Login")}>
+        <ButtonText>Voltar para Login</ButtonText>
+      </Button>     
     </Container>
   )
  }

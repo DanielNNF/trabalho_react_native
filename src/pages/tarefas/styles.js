@@ -24,7 +24,7 @@ export const Input = styled.TextInput`
 export const Button = styled.TouchableOpacity`
   width: 100px;
   height: 40px;
-  background-color: #b3c3c3;
+  background-color: #bcdeff;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-  color: #fff;
+  color: #1b1b1b;
   font-size: 18px;
   font-weight: bold;
 `;
@@ -40,7 +40,7 @@ export const ButtonText = styled.Text`
 export const BtnDetalhes = styled.TouchableOpacity`
   width: 65px;
   height: 30px;
-  background-color: #1a5ce1;
+  background-color: #113379;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
@@ -59,12 +59,12 @@ export const BtnText = styled.Text`
 
 export const FormAddNewTask = styled.View`
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 20px;
 `;
 
 export const Tasks = styled.View`
   flex: 1;
-  margin-top: 40px;
+  margin-top: 20px;
 `;
 
 export const Task = styled.View`
@@ -77,13 +77,11 @@ export const Task = styled.View`
 `;
 
 export const TaskText = styled.Text`
-  font-size: 16px;
-  color: #3a3a3a;
+  font-size: 18px;
+  color: #1b1b1b;
   text-align: justify;
   
 `;
-
-
 
 export const TaskAction = styled.View`
   flex-direction: row-reverse;

@@ -23,14 +23,15 @@ export const Logo = styled.Image`
 width: 290px;
 height: 40px;
 margin-top: 15px;
-background-color: #000e4c;
+background-color: #bcdeef;
 border-radius: 5px;
 align-items: center;
 justify-content: center;
 `;
 
 export const ButtonText = styled.Text`
-  color: #fff;
+  color: #1b1b1b;
   font-size: 18px;
   font-weight: bold;
+  font-family: sans-serif;
 `;

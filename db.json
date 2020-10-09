@@ -17,6 +17,12 @@
       "email": "d@d",
       "password": "1",
       "usuario": "dandan"
+    },
+    {
+      "email": "bibi@gamer",
+      "password": "bibi",
+      "usuario": "bgamer",
+      "id": 4
     }
   ],
   "projetos": [
