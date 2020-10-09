@@ -19,28 +19,22 @@
     },
     {
       "descricao": "New",
-      "concluido": false,
-      "id": 6
+      "id": 6,
+      "concluido": false
     }
   ],
   "tarefas": [
     {
       "descricao": "Eita carai",
-      "concluido": false,
       "projetoId": 5,
-      "id": 1
-    },
-    {
-      "descricao": "Fui almoçar, volto 13:30",
-      "concluido": false,
-      "projetoId": 5,
-      "id": 2
+      "id": 1,
+      "concluido": false
     },
     {
       "descricao": "Eita",
-      "concluido": false,
       "projetoId": 6,
-      "id": 3
+      "id": 3,
+      "concluido": true
     }
   ]
 }
