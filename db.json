@@ -19,36 +19,23 @@
       "usuario": "dandan"
     },
     {
-      "email": "breno@breno",
-      "password": "claudio",
-      "usuario": "brenobr",
-      "id": 4
+      "descricao": "New",
+      "id": 6,
+      "concluido": false
     }
   ],
   "projetos": [
     {
-      "descricao": "New",
-      "concluido": false,
-      "id": 6
+      "descricao": "Eita carai",
+      "projetoId": 5,
+      "id": 1,
+      "concluido": false
     },
-    {
-      "descricao": "Breno boboca",
-      "concluido": false,
-      "id": 7
-    }
-  ],
-  "tarefas": [
     {
       "descricao": "Eita",
-      "concluido": false,
       "projetoId": 6,
-      "id": 3
-    },
-    {
-      "descricao": "Robert impostor",
-      "concluido": false,
-      "projetoId": 7,
-      "id": 4
+      "id": 3,
+      "concluido": true
     }
   ]
 }

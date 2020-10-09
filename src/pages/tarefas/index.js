@@ -122,6 +122,12 @@ const Tarefas = ({ route }) => {
       <Title>Tarefas projeto {projetoId}</Title>
 
       <RNPickerSelect
+        style={{
+          inputAndroid: {
+            color: 'white'
+          }
+        }
+        }
         onValueChange={(value) => console.log(value)}
         items={usuarios}
         style={{
