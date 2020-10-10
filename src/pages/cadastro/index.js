@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import logoImg from '../../assets/logo.png';
 import Api from '../../services/api';
-
+import {Text} from 'react-native';
 
 import { Container, Input, Logo, Button, ButtonText } from './style';
-
-
 
 const cadastro = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -55,7 +53,9 @@ const cadastro = ({ navigation }) => {
       <Button onPress={() => navigation.navigate("Login")}>
         <ButtonText style={{ fontFamily: 'sans-serif', fontSize: 18 }}>Cadastrado? Voltei para Login</ButtonText>
       </Button>
-
+      <Button onPress={()=> navigation.navigate("Login")}>
+        <ButtonText>Voltar para Login</ButtonText>
+      </Button>     
     </Container>
   )
 }
