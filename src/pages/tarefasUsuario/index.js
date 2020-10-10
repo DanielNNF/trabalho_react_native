@@ -59,7 +59,7 @@ const TarefasUsuarios = () => {
 
   return (
     <Container>
-      <Title>Minhas Tarefas</Title>
+      <Title style={{marginTop: 15}}>Minhas Tarefas</Title>
 
 
       <Tasks>
@@ -97,7 +97,7 @@ const TarefasUsuarios = () => {
             </TaskAction>
           </Task>
         ))
-          : <Title>Você não tem nenhuma tarefa</Title>
+          : <Title>Nenhuma tarefa pendente</Title>
         }
       </Tasks>
     </Container>

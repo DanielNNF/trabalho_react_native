@@ -30,7 +30,34 @@
       "descricao": "teste",
       "id": 1,
       "concluido": false
+    },
+    {
+      "descricao": "Avanzado",
+      "concluido": false,
+      "id": 2
     }
   ],
-  "tarefas": []
+  "tarefas": [
+    {
+      "descricao": "Avanzar",
+      "usuarioId": 2,
+      "projetoId": 2,
+      "id": 1,
+      "concluido": true
+    },
+    {
+      "descricao": "Estilizar",
+      "concluido": false,
+      "usuarioId": 4,
+      "projetoId": 2,
+      "id": 2
+    },
+    {
+      "descricao": "Scrum master",
+      "concluido": false,
+      "usuarioId": 3,
+      "projetoId": 2,
+      "id": 3
+    }
+  ]
 }

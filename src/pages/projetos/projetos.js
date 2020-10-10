@@ -134,7 +134,7 @@ const Projetos = ({ navigation }) => {
           <Task key={projeto.id}>
             <TaskText>{projeto.descricao}</TaskText>
 
-            <BtnDetalhes onPress={() => navigation.navigate("Tarefas", { projetoId: projeto.id })}>
+            <BtnDetalhes onPress={() => navigation.navigate("Tarefas", { projetoId: projeto.id, projetoNome: projeto.descricao })}>
               <BtnText>Detalhes</BtnText>
             </BtnDetalhes>
 

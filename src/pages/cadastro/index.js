@@ -50,9 +50,7 @@ const cadastro = ({ navigation }) => {
       <Button onPress={() => handleSubmit()}>
         <ButtonText>Cadastrar</ButtonText>
       </Button>
-      <Button onPress={() => navigation.navigate("Login")}>
-        <ButtonText style={{ fontFamily: 'sans-serif', fontSize: 18 }}>Cadastrado? Voltei para Login</ButtonText>
-      </Button>
+
       <Button onPress={()=> navigation.navigate("Login")}>
         <ButtonText>Voltar para Login</ButtonText>
       </Button>     

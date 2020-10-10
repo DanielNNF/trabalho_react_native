@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Projetos from './projetos'
-import Tarefas from '../tarefas'
+import Tarefas from '../tarefasProjeto'
 
 const Stack = createStackNavigator();
 const RootNavigator = () => {

@@ -24,11 +24,11 @@ import {
 const Tarefas = ({ route }) => {
   const [usuarios, setUsuarios] = useState([{ label: '', value: 0 }]);
   const [usuarioId, setUsuarioId] = useState(0);
-  const { projetoId } = route.params;
   const [tasks, setTasks] = useState([]);
   const [tasksFiltered, setTasksFiltered] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const { projetoId, projetoNome } = route.params;
 
   const loadTasks = useCallback(
     async () => {
@@ -124,7 +124,7 @@ const Tarefas = ({ route }) => {
 
   return (
     <Container>
-      <Title>Tarefas projeto {projetoId}</Title>
+      <Title>Projeto {projetoNome}</Title>
 
       <RNPickerSelect
         style={{
@@ -133,7 +133,7 @@ const Tarefas = ({ route }) => {
           }
         }
         }
-        onValueChange={(value) => setUsuarioId(value)}
+        onValueChange={(value) => {setUsuarioId(value), setErrorMessage('')}}
         items={usuarios}
         style={{
           inputAndroid: {
