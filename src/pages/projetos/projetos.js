@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback} from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import api from '../../services/api';
-import  { useAuth } from '../hooks/auth'
+import { useAuth } from '../hooks/auth'
 
 
-import { 
+import {
   Container,
   Title,
   Input,
@@ -22,9 +22,9 @@ import {
 } from './styles';
 
 
-const Projetos = ({navigation}) => {
+const Projetos = ({ navigation }) => {
   const { signOut } = useAuth();
-  const [projeto, setProjetos] = useState([]);
+  const [projetos, setProjetos] = useState([]);
   const [newProjeto, setNewProjeto] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -32,16 +32,16 @@ const Projetos = ({navigation}) => {
     async () => {
       const response = await api.get(`projetos`);
       setProjetos(response.data);
-    },[projeto],
+    }
   );
 
   useEffect(() => {
     loadProjetos();
-  }, [loadProjetos,]);
+  }, []);
 
   const handleAddProjeto = useCallback(
     async () => {
-      if(newProjeto === "") {
+      if (newProjeto === "") {
         setErrorMessage("Digite o Projeto a ser adicionado");
         return;
       }
@@ -54,8 +54,8 @@ const Projetos = ({navigation}) => {
       };
 
       try {
-        await api.post(`projetos`, params);  
-        
+        await api.post(`projetos`, params);
+
         loadProjetos();
         setNewProjeto("");
       } catch (error) {
@@ -63,7 +63,7 @@ const Projetos = ({navigation}) => {
 
         setErrorMessage("Ocorreu um erro ao adicionar o Projeto");
       }
-    },[loadProjetos, newProjeto],
+    }, [loadProjetos, newProjeto],
   );
 
   const handleProjeto = useCallback(
@@ -72,43 +72,47 @@ const Projetos = ({navigation}) => {
         ...projeto,
         concluido: !projeto.concluido
       }
-  
+
       await api.put(`projetos/${projeto.id}`, params);
-  
+
       loadProjetos();
-    },[loadProjetos],
+    }, [loadProjetos],
   );
 
   const removeProjeto = useCallback(
     async (projeto) => {
-      await api.delete(`projetos/${projeto.id}`);
+      try {
+        await api.delete(`projetos/${projeto.id}/?_embed=tarefas`);
+      } catch (error) {
+        console.log('delete project error', error)
+      }
 
       loadProjetos();
-    },[loadProjetos],
+    }, [loadProjetos],
   );
 
   return (
-     <Container>
-          
+    <Container>
+
 
       <FormAddNewTask>
-        <Input 
+        <Input
           value={newProjeto}
           onChangeText={text => setNewProjeto(text)}
           placeholder="Novo projeto"
-          style={{fontSize: 18}}
+          style={{ fontSize: 18 }}
 
         />
         <>
-        <Button onPress={() => handleAddProjeto()}>
-          <ButtonText>
+          <Button onPress={() => handleAddProjeto()}>
+            <ButtonText>
               Criar
           </ButtonText>
-        </Button>
-        
+          </Button>
+
         </>
-        
-        
+
+
 
       </FormAddNewTask>
 
@@ -117,49 +121,49 @@ const Projetos = ({navigation}) => {
       )}
 
       <Tasks>
-        { projeto.map(projeto => (
+        {projetos.map(projeto => (
           <Task key={projeto.id}>
             <TaskText>{projeto.descricao}</TaskText>
 
-            <BtnDetalhes onPress={() => navigation.navigate("Tarefas", {projetoId:projeto.id})}>
+            <BtnDetalhes onPress={() => navigation.navigate("Tarefas", { projetoId: projeto.id })}>
               <BtnText>Detalhes</BtnText>
             </BtnDetalhes>
-          
+
 
             <TaskAction>
-              { projeto.concluido ? (
+              {projeto.concluido ? (
                 <>
-                  <MaterialCommunityIcons 
-                    name="delete-outline"
-                    color="#1b1b1b"
-                    size={22}
-                    onPress={() => removeProjeto(projeto)}
-                  />
-                  <MaterialCommunityIcons 
+                  <MaterialCommunityIcons
                     name="check-circle-outline"
                     color="#1b1b1b"
                     size={22}
                     onPress={() => handleProjeto(projeto)}
                   />
+                  <MaterialCommunityIcons
+                    name="delete-outline"
+                    color="#1b1b1b"
+                    size={22}
+                    onPress={() => removeProjeto(projeto)}
+                  />
                 </>
               ) : (
-                <MaterialCommunityIcons 
-                  name="circle-outline"
-                  color="#1b1b1b"
-                  size={22}
-                  onPress={() => handleProjeto(projeto)}
-                />
-              )}
-              
+                  <MaterialCommunityIcons
+                    name="circle-outline"
+                    color="#1b1b1b"
+                    size={22}
+                    onPress={() => handleProjeto(projeto)}
+                  />
+                )}
+
             </TaskAction>
           </Task>
         ))
         }
       </Tasks>
 
-        <ButtonSair onPress={signOut}>
-             <ButtonText>Sair</ButtonText>
-        </ButtonSair>
+      <ButtonSair onPress={signOut}>
+        <ButtonText>Sair</ButtonText>
+      </ButtonSair>
     </Container>
   )
 }

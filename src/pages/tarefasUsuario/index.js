@@ -1,29 +1,23 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import api from '../../services/api';
+import {useIsFocused} from '@react-navigation/native'
 import { useAuth } from '../hooks/auth'
 
 
 import {
   Container,
   Title,
-  Input,
-  Button,
-  BtnDetalhes,
-  BtnText,
-  ButtonText,
-  FormAddNewTask,
   Tasks,
   Task,
   TaskText,
-  TaskAction,
-  ErroMessage
+  TaskAction
 } from './styles';
 
 
 const TarefasUsuarios = () => {
+  const isFocused = useIsFocused();
   const { user } = useAuth();
-
   const [tasks, setTasks] = useState([]);
 
   const loadTasks = useCallback(
@@ -34,9 +28,12 @@ const TarefasUsuarios = () => {
   );
 
   useEffect(() => {
-
     loadTasks();
-  }, [loadTasks]);
+  }, [loadTasks, isFocused]);
+
+  useEffect(() => {
+    console.log(tasks.length)
+  }, [tasks])
 
 
   const handleTask = useCallback(
@@ -67,7 +64,7 @@ const TarefasUsuarios = () => {
 
       <Tasks>
 
-        {tasks.length > 0 ? tasks.map(task => (
+        {tasks.length ? tasks.map(task => (
           <Task key={task.id}>
             <TaskText>{task.descricao}</TaskText>
 

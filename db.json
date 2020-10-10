@@ -25,67 +25,6 @@
       "id": 4
     }
   ],
-  "projetos": [
-    {
-      "descricao": "avanzado",
-      "concluido": false,
-      "id": 3
-    },
-    {
-      "descricao": "jean claud van dame",
-      "id": 4,
-      "concluido": true
-    }
-  ],
-  "tarefas": [
-    {
-      "descricao": "New teste",
-      "usuarioId": 1,
-      "projetoId": 1,
-      "id": 2,
-      "concluido": false
-    },
-    {
-      "descricao": "Eita",
-      "concluido": false,
-      "usuarioId": null,
-      "projetoId": 1,
-      "id": 3
-    },
-    {
-      "descricao": "Eita carai",
-      "concluido": false,
-      "usuarioId": 1,
-      "projetoId": 1,
-      "id": 4
-    },
-    {
-      "descricao": "Bruh",
-      "concluido": false,
-      "usuarioId": 3,
-      "projetoId": 1,
-      "id": 5
-    },
-    {
-      "descricao": "Ir no buteco",
-      "usuarioId": 4,
-      "projetoId": 3,
-      "id": 6,
-      "concluido": false
-    },
-    {
-      "descricao": "Aula de coach",
-      "usuarioId": 4,
-      "projetoId": 3,
-      "id": 7,
-      "concluido": true
-    },
-    {
-      "descricao": "Mandar mensagem pra daniboy",
-      "usuarioId": 4,
-      "projetoId": 3,
-      "id": 8,
-      "concluido": true
-    }
-  ]
+  "projetos": [],
+  "tarefas": []
 }
