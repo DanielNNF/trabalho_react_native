@@ -8,6 +8,11 @@ export const Container = styled.View`
   background-color: #103379;
 `;
 
+export const Title = styled.Text`
+  font-size: 36px;
+  color: #fff;
+`;
+
 export const Input = styled.TextInput`
   flex: 1;
   height: 40px;

@@ -93,6 +93,7 @@ const Projetos = ({ navigation }) => {
 
   return (
     <Container>
+      <Title>Projetos</Title>
 
 
       <FormAddNewTask>

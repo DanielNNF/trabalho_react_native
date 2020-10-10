@@ -8,8 +8,16 @@ const Stack = createStackNavigator();
 const RootNavigator = () => {
 
     return (
-        <Stack.Navigator >
-            <Stack.Screen name="Projetos" component={Projetos} />
+        <Stack.Navigator screenOptions={{
+            headerStyle:
+                { backgroundColor: '#001b54' },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontSize: 28,
+                fontFamily: 'sans-serif'
+            },
+        }}>
+            <Stack.Screen name="Projetos" component={Projetos} options={{ headerShown: false }} />
             <Stack.Screen name="Tarefas" component={Tarefas} />
         </Stack.Navigator>
     )

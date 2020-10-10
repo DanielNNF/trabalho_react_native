@@ -25,6 +25,12 @@
       "id": 4
     }
   ],
-  "projetos": [],
+  "projetos": [
+    {
+      "descricao": "teste",
+      "id": 1,
+      "concluido": false
+    }
+  ],
   "tarefas": []
 }
