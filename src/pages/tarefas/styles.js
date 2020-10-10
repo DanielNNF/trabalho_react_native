@@ -40,7 +40,7 @@ export const ButtonText = styled.Text`
 export const BtnDetalhes = styled.TouchableOpacity`
   width: 65px;
   height: 30px;
-  background-color: #113379;
+  background-color: #103379;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
