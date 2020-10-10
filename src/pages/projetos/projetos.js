@@ -131,13 +131,13 @@ const Projetos = ({navigation}) => {
                 <>
                   <MaterialCommunityIcons 
                     name="delete-outline"
-                    color="#3a3a3a"
+                    color="#1b1b1b"
                     size={22}
                     onPress={() => removeProjeto(projeto)}
                   />
                   <MaterialCommunityIcons 
                     name="check-circle-outline"
-                    color="#3a3a3a"
+                    color="#1b1b1b"
                     size={22}
                     onPress={() => handleProjeto(projeto)}
                   />
@@ -145,7 +145,7 @@ const Projetos = ({navigation}) => {
               ) : (
                 <MaterialCommunityIcons 
                   name="circle-outline"
-                  color="#3a3a3a"
+                  color="#1b1b1b"
                   size={22}
                   onPress={() => handleProjeto(projeto)}
                 />
