@@ -32,12 +32,12 @@ const Projetos = ({navigation}) => {
     async () => {
       const response = await api.get(`projetos`);
       setProjetos(response.data);
-    },[],
+    },[projeto],
   );
 
   useEffect(() => {
     loadProjetos();
-  }, [loadProjetos]);
+  }, [loadProjetos,]);
 
   const handleAddProjeto = useCallback(
     async () => {
@@ -96,7 +96,7 @@ const Projetos = ({navigation}) => {
           value={newProjeto}
           onChangeText={text => setNewProjeto(text)}
           placeholder="Novo projeto"
-          style={{fontSize: newProjeto ? 16 : 20}}
+          style={{fontSize: 18}}
 
         />
         <>

@@ -11,7 +11,7 @@ const AppRoutes = () =>{
     return(
         <Auth.Navigator initialRouteName="Projetos">
              <Auth.Screen name="Projetos" component={Projetos} />
-             <Auth.Screen name="Tasks" component={Tasks} />
+             <Auth.Screen name="Minhas Tarefas" component={Tasks} />
         </Auth.Navigator>
     )
 }

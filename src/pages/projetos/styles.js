@@ -42,7 +42,7 @@ export const ButtonText = styled.Text`
   color: #1b1b1b;
   font-size: 18px;
   font-weight: bold;
-  font-family: arial;
+  font-family: sans-serif;
 `;
 
 export const BtnDetalhes = styled.TouchableOpacity`
@@ -86,7 +86,7 @@ export const Task = styled.View`
 
 export const TaskText = styled.Text`
   font-size: 18px;
-  font-family: arial;
+  font-family: sans-serif;
   color: #1b1b1b;
   text-align: justify;
   

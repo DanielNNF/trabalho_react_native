@@ -1,65 +1,63 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import logoImg from '../../assets/logo.png';
 import Api from '../../services/api';
 
 
+import { Container, Input, Logo, Button, ButtonText } from './style';
 
 
- import { Container, Input, Logo, Button, ButtonText } from './style';
 
-
-  
-const cadastro = ({navigation}) => {
-//  const [cadastro, setCadastro] = useState([]);
+const cadastro = ({ navigation }) => {
   const [email, setEmail] = useState('');
- // const [nome, setNome] = useState('');
   const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
-  
 
-  const handleSubmit = async() =>{
-    if(!email && !password && !usuario) return;
-   
+
+  const handleSubmit = async () => {
+    if (!email && !password && !usuario) return;
+
     const params = {
-      email:email, 
+      email: email,
       password: password,
-      usuario:usuario
+      usuario: usuario
     }
     await Api.post('usuarios', params)
     navigation.navigate('Login');
 
   }
-  return(
-    
+  return (
+
     <Container>
       <Logo source={logoImg} />
 
-      <Input 
-        value = {email}
+      <Input
+        value={email}
         onChangeText={text => setEmail(text)}
         placeholder="E-mail"
       />
 
 
-      <Input 
+      <Input
         value={password}
         onChangeText={text => setPassword(text)}
         placeholder="Senha"
         secureTextEntry={true}
       />
-      <Input 
-        value = {usuario}
+      <Input
+        value={usuario}
         onChangeText={text => setUsuario(text)}
         placeholder="Usuário"
       />
 
       <Button onPress={() => handleSubmit()}>
-          <ButtonText>Cadastrar</ButtonText>
+        <ButtonText>Cadastrar</ButtonText>
       </Button>
-      <ButtonText onPress={()=> navigation.navigate("Login")}>Cadastrado? Voltei para Login</ButtonText>
-           
+      <Button onPress={() => navigation.navigate("Login")}>
+        <ButtonText style={{ fontFamily: 'sans-serif', fontSize: 18 }}>Cadastrado? Voltei para Login</ButtonText>
+      </Button>
+
     </Container>
   )
- }
+}
 
 export default cadastro;
