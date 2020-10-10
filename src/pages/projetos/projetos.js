@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useCallback} from 'react';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import React, { useState, useEffect, useCallback } from 'react';
+import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import api from '../../services/api';
 import { useAuth } from '../hooks/auth'
+
+import { View } from 'react-native'
 
 
 import {
@@ -93,8 +95,14 @@ const Projetos = ({ navigation }) => {
 
   return (
     <Container>
-      <Title>Projetos</Title>
+      <View style={{flexDirection: 'row', marginTop: 20, marginBottom: 15, alignItems: 'center'}}>
 
+        <Title>Projetos</Title>
+        <View style={{ marginLeft: 'auto', justifyContent: 'center', alignItems: 'center' }}>
+          <Feather onPress={signOut} name='log-out' size={30} color='#fff'></Feather>
+          <ButtonText style={{ color: '#fff', marginTop: 2 }}>Sair</ButtonText>
+        </View>
+      </View>
 
       <FormAddNewTask>
         <Input
@@ -162,9 +170,6 @@ const Projetos = ({ navigation }) => {
         }
       </Tasks>
 
-      <ButtonSair onPress={signOut}>
-        <ButtonText>Sair</ButtonText>
-      </ButtonSair>
     </Container>
   )
 }
