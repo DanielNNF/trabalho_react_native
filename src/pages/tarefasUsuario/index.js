@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { ScrollView } from 'react-native';
 import api from '../../services/api';
 import {useIsFocused} from '@react-navigation/native'
 import { useAuth } from '../hooks/auth'
@@ -60,10 +61,10 @@ const TarefasUsuarios = () => {
   return (
     <Container>
       <Title style={{marginTop: 15}}>Minhas Tarefas</Title>
-
+      <ScrollView>
 
       <Tasks>
-
+      
         {tasks.length ? tasks.map(task => (
           <Task key={task.id}>
             <TaskText>{task.descricao}</TaskText>
@@ -100,6 +101,7 @@ const TarefasUsuarios = () => {
           : <Title>Nenhuma tarefa pendente</Title>
         }
       </Tasks>
+      </ScrollView>
     </Container>
   )
 }

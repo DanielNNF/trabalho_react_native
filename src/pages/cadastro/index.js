@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import logoImg from '../../assets/logo.png';
 import Api from '../../services/api';
-import {Text} from 'react-native';
-
 import { Container, Input, Logo, Button, ButtonText } from './style';
 
 const cadastro = ({ navigation }) => {
@@ -21,8 +19,9 @@ const cadastro = ({ navigation }) => {
     }
     await Api.post('usuarios', params)
     navigation.navigate('Login');
+    
 
-  }
+ }
   return (
 
     <Container>

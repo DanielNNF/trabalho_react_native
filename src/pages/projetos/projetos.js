@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import api from '../../services/api';
 import { useAuth } from '../hooks/auth'
+import { ScrollView } from 'react-native';
 
 import { View } from 'react-native'
 
@@ -94,16 +95,17 @@ const Projetos = ({ navigation }) => {
   );
 
   return (
-    <Container>
+    <Container> 
       <View style={{flexDirection: 'row', marginTop: 20, marginBottom: 15, alignItems: 'center'}}>
 
         <Title>Projetos</Title>
+       
         <View style={{ marginLeft: 'auto', justifyContent: 'center', alignItems: 'center' }}>
           <Feather onPress={signOut} name='log-out' size={30} color='#fff'></Feather>
           <ButtonText style={{ color: '#fff', marginTop: 2 }}>Sair</ButtonText>
         </View>
       </View>
-
+      <ScrollView>
       <FormAddNewTask>
         <Input
           value={newProjeto}
@@ -169,7 +171,7 @@ const Projetos = ({ navigation }) => {
         ))
         }
       </Tasks>
-
+      </ScrollView>
     </Container>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { ScrollView } from 'react-native';
 import api from '../../services/api';
 import RNPickerSelect from 'react-native-picker-select';
 
@@ -126,6 +127,7 @@ const Tarefas = ({ route }) => {
   return (
     <Container>
       <Title>Projeto {projetoNome}</Title>
+      <ScrollView>
 
       <RNPickerSelect
         style={{
@@ -198,6 +200,7 @@ const Tarefas = ({ route }) => {
         ))
         }
       </Tasks>
+      </ScrollView>
     </Container>
   )
 }
