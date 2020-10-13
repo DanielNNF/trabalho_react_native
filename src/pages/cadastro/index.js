@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import logoImg from '../../assets/logo.png';
 import Api from '../../services/api';
 import { Container, Input, Logo, Button, ButtonText } from './style';
+import {useAuth} from '../hooks/auth'
 
 const cadastro = ({ navigation }) => {
+  const {signIn} = useAuth();
   const [email, setEmail] = useState('');
   const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
@@ -18,8 +20,7 @@ const cadastro = ({ navigation }) => {
       usuario: usuario
     }
     await Api.post('usuarios', params)
-    navigation.navigate('Login');
-    
+    await signIn({email:email, password:password})    
 
  }
   return (
