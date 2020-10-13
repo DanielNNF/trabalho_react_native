@@ -12,6 +12,7 @@ const AppRoutes = () => {
         <Auth.Navigator
             initialRouteName="Projetos"
             tabBarOptions={{ tabStyle: { backgroundColor: '#001b54'}, style:{borderTopWidth: 0} }}>
+                
             <Auth.Screen name="Projetos" component={Projetos} />
             <Auth.Screen name="Minhas Tarefas" component={Tasks} />
         </Auth.Navigator>

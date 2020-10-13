@@ -73,16 +73,16 @@ const TarefasUsuarios = () => {
               {task.concluido ? (
                 <>
                   <MaterialCommunityIcons
-                    name="check-circle-outline"
-                    color="#3a3a3a"
-                    size={22}
-                    onPress={() => handleTask(task)}
-                  />
-                  <MaterialCommunityIcons
                     name="delete-outline"
                     color="#3a3a3a"
                     size={22}
                     onPress={() => removeTask(task)}
+                  />
+                  <MaterialCommunityIcons
+                    name="check-circle-outline"
+                    color="#3a3a3a"
+                    size={22}
+                    onPress={() => handleTask(task)}
                   />
                 </>
               ) : (

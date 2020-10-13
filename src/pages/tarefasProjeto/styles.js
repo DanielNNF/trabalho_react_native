@@ -73,19 +73,21 @@ export const Task = styled.View`
   border-radius: 5px;
   padding: 10px 20px;
   justify-content: space-between;
-  flex-direction: column;
+  flex-direction: row;
 `;
 
 export const TaskText = styled.Text`
   font-size: 18px;
   color: #1b1b1b;
-  text-align: justify;
+  width: 80%;
+  padding: 2px;
   
 `;
 
 export const TaskAction = styled.View`
-  flex-direction: row-reverse;
-  margin-top: -30px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ErroMessage = styled.Text`

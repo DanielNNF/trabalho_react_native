@@ -10,7 +10,7 @@ const RootNavigator = () => {
     return (
         <Stack.Navigator screenOptions={{
             headerStyle:
-                { backgroundColor: '#001b54' },
+                { backgroundColor: '#001b54', elevation: 0 },
             headerTintColor: '#fff',
             headerTitleStyle: {
                 fontSize: 28,

@@ -38,7 +38,6 @@ const Tarefas = ({ route }) => {
   );
 
   useEffect(() => {
-
     loadTasks();
   }, [loadTasks]);
 
@@ -63,6 +62,7 @@ const Tarefas = ({ route }) => {
     })
     setTasksFiltered(temp);
   };
+
   useEffect(() => {
     if (!projetoId) { return }
     filtrarTarefas();
@@ -70,7 +70,9 @@ const Tarefas = ({ route }) => {
 
   const handleAddTask = useCallback(
     async () => {
+      setErrorMessage("");
       if (!usuarioId) {
+        console.log(usuarioId)
         setErrorMessage("Insira o usuário")
         return
       }
@@ -79,7 +81,6 @@ const Tarefas = ({ route }) => {
         return;
       }
 
-      setErrorMessage("");
 
       const params = {
         descricao: newTask,
@@ -98,7 +99,7 @@ const Tarefas = ({ route }) => {
 
         setErrorMessage("Ocorreu um erro ao adicionar tarefa");
       }
-    }, [loadTasks, newTask],
+    }, [loadTasks, newTask, usuarioId],
   );
 
   const handleTask = useCallback(
@@ -133,7 +134,7 @@ const Tarefas = ({ route }) => {
           }
         }
         }
-        onValueChange={(value) => {setUsuarioId(value), setErrorMessage('')}}
+        onValueChange={(value) => { setUsuarioId(value), setErrorMessage('') }}
         items={usuarios}
         style={{
           inputAndroid: {
@@ -142,11 +143,12 @@ const Tarefas = ({ route }) => {
         }
         }
       />
+
       <FormAddNewTask>
         <Input
           value={newTask}
           onChangeText={text => setNewTask(text)}
-          placeholder="Novo projeto"
+          placeholder="Nova tarefa"
         />
 
 

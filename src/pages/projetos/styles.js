@@ -84,16 +84,17 @@ export const Task = styled.View`
   background-color: #fff;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding: 10px 10px;
+  padding: 20px 10px;
   justify-content: space-between;
   flex-direction: column;
+  
 `;
 
 export const TaskText = styled.Text`
   font-size: 18px;
   font-family: sans-serif;
   color: #1b1b1b;
-  text-align: justify;
+  width: 80%;
   
 `;
 

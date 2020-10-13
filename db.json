@@ -27,30 +27,18 @@
   ],
   "projetos": [
     {
-      "descricao": "teste",
-      "id": 1,
-      "concluido": false
-    },
-    {
       "descricao": "Avanzado",
-      "concluido": false,
-      "id": 2
+      "id": 2,
+      "concluido": false
     }
   ],
   "tarefas": [
     {
-      "descricao": "Avanzar",
-      "usuarioId": 2,
-      "projetoId": 2,
-      "id": 1,
-      "concluido": true
-    },
-    {
       "descricao": "Estilizar",
-      "concluido": false,
       "usuarioId": 4,
       "projetoId": 2,
-      "id": 2
+      "id": 2,
+      "concluido": false
     },
     {
       "descricao": "Scrum master",
@@ -58,6 +46,48 @@
       "usuarioId": 3,
       "projetoId": 2,
       "id": 3
+    },
+    {
+      "descricao": "Avanzar",
+      "usuarioId": 2,
+      "projetoId": 2,
+      "id": 4,
+      "concluido": false
+    },
+    {
+      "descricao": "Teste",
+      "usuarioId": 2,
+      "projetoId": 2,
+      "id": 5,
+      "concluido": false
+    },
+    {
+      "descricao": "MODFICAR VIEW PARA SCROLL VIEW",
+      "usuarioId": 2,
+      "projetoId": 2,
+      "id": 13,
+      "concluido": true
+    },
+    {
+      "descricao": "ICONES TOPZ BOTTOM NAVIGATION",
+      "usuarioId": 2,
+      "projetoId": 2,
+      "id": 15,
+      "concluido": true
+    },
+    {
+      "descricao": "Test",
+      "concluido": false,
+      "usuarioId": 2,
+      "projetoId": 2,
+      "id": 16
+    },
+    {
+      "descricao": "teste",
+      "concluido": false,
+      "usuarioId": 2,
+      "projetoId": 2,
+      "id": 17
     }
   ]
 }
