@@ -26,7 +26,7 @@ import {
 
 
 const Projetos = ({ navigation }) => {
-  const { signOut } = useAuth();
+  const { user, signOut } = useAuth();
   const [projetos, setProjetos] = useState([]);
   const [newProjeto, setNewProjeto] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -95,83 +95,87 @@ const Projetos = ({ navigation }) => {
   );
 
   return (
-    <Container> 
-      <View style={{flexDirection: 'row', marginTop: 20, marginBottom: 15, alignItems: 'center'}}>
+    <Container>
+      <View style={{ flexDirection: 'row', marginTop: 20, marginBottom: 15, alignItems: 'center' }}>
 
         <Title>Projetos</Title>
-       
-        <View style={{ marginLeft: 'auto', justifyContent: 'center', alignItems: 'center' }}>
-          <Feather onPress={signOut} name='log-out' size={30} color='#fff'></Feather>
-          <ButtonText style={{ color: '#fff', marginTop: 2 }}>Sair</ButtonText>
-        </View>
+        <ButtonText style={{ marginLeft: 'auto', color: '#fff' }}>{user.usuario}</ButtonText>
+        <Feather name='user' size={30} color='#fff'></Feather>
+
       </View>
+
       <ScrollView>
-      <FormAddNewTask>
-        <Input
-          value={newProjeto}
-          onChangeText={text => setNewProjeto(text)}
-          placeholder="Novo projeto"
-          style={{ fontSize: 18 }}
+        <FormAddNewTask>
+          <Input
+            value={newProjeto}
+            onChangeText={text => setNewProjeto(text)}
+            placeholder="Novo projeto"
+            style={{ fontSize: 18 }}
 
-        />
-        <>
-          <Button onPress={() => handleAddProjeto()}>
-            <ButtonText>
-              Criar
+          />
+          <>
+            <Button onPress={() => handleAddProjeto()}>
+              <ButtonText>
+                Criar
           </ButtonText>
-          </Button>
+            </Button>
 
-        </>
-
-
-
-      </FormAddNewTask>
-
-      { !!errorMessage && (
-        <ErroMessage>{errorMessage}</ErroMessage>
-      )}
-
-      <Tasks>
-        {projetos.map(projeto => (
-          <Task key={projeto.id}>
-            <TaskText>{projeto.descricao}</TaskText>
-
-            <BtnDetalhes onPress={() => navigation.navigate("Tarefas", { projetoId: projeto.id, projetoNome: projeto.descricao })}>
-              <BtnText>Detalhes</BtnText>
-            </BtnDetalhes>
+          </>
 
 
-            <TaskAction>
-              {projeto.concluido ? (
-                <>
-                  <MaterialCommunityIcons
-                    name="check-circle-outline"
-                    color="#1b1b1b"
-                    size={22}
-                    onPress={() => handleProjeto(projeto)}
-                  />
-                  <MaterialCommunityIcons
-                    name="delete-outline"
-                    color="#1b1b1b"
-                    size={22}
-                    onPress={() => removeProjeto(projeto)}
-                  />
-                </>
-              ) : (
-                  <MaterialCommunityIcons
-                    name="circle-outline"
-                    color="#1b1b1b"
-                    size={22}
-                    onPress={() => handleProjeto(projeto)}
-                  />
-                )}
 
-            </TaskAction>
-          </Task>
-        ))
-        }
-      </Tasks>
+        </FormAddNewTask>
+
+        {!!errorMessage && (
+          <ErroMessage>{errorMessage}</ErroMessage>
+        )}
+
+        <Tasks>
+          {projetos.map(projeto => (
+            <Task key={projeto.id}>
+              <TaskText>{projeto.descricao}</TaskText>
+
+
+              <BtnDetalhes onPress={() => navigation.navigate("Tarefas", { projetoId: projeto.id, projetoNome: projeto.descricao })}>
+                <BtnText>Detalhes</BtnText>
+              </BtnDetalhes>
+
+
+              <TaskAction>
+                {projeto.concluido ? (
+                  <>
+                    <MaterialCommunityIcons
+                      name="check-circle-outline"
+                      color="#1b1b1b"
+                      size={25}
+                      onPress={() => handleProjeto(projeto)}
+                    />
+                    <MaterialCommunityIcons
+                      name="delete-outline"
+                      color="#1b1b1b"
+                      size={25}
+                      onPress={() => removeProjeto(projeto)}
+                    />
+                  </>
+                ) : (
+                    <MaterialCommunityIcons
+                      name="circle-outline"
+                      color="#1b1b1b"
+                      size={25}
+                      onPress={() => handleProjeto(projeto)}
+                    />
+                  )}
+
+              </TaskAction>
+            </Task>
+          ))
+          }
+        </Tasks>
       </ScrollView>
+        <View style={{ marginLeft: 'auto', marginTop:30, justifyContent: 'center', alignItems: 'center', flexDirection:'row' }}>
+          <ButtonText onPress={signOut} style={{ color: '#fff', marginRight: 5}}>Sair</ButtonText>
+          <Feather onPress={signOut} name='log-out' size={30} color='#fff'></Feather>
+        </View>
     </Container>
   )
 }

@@ -86,7 +86,8 @@ export const TaskText = styled.Text`
 
 export const TaskAction = styled.View`
   flex-direction: row;
-  margin-left: auto;  
+  margin-left: auto;
+  align-items: center;
 `;
 
 export const ErroMessage = styled.Text`

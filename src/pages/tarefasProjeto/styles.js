@@ -71,7 +71,8 @@ export const Task = styled.View`
   background-color: #fff;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 10px;
+  padding-right: 20px;
   justify-content: space-between;
   flex-direction: row;
 `;
@@ -86,8 +87,8 @@ export const TaskText = styled.Text`
 
 export const TaskAction = styled.View`
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  
 `;
 
 export const ErroMessage = styled.Text`
